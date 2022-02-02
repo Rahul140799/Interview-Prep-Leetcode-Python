@@ -37,8 +37,13 @@ class Solution:
                 if k == 1:
                     uf.union(i,idx)
         
-        print(uf.parent)
-        print(uf.size)
+        seen = set()
+        for i in range(len(isConnected)):
+            seen.add(uf.find(i))
+        return len(seen)
+    
+#         print("Parent :::", uf.parent)
+#         print(uf.size)
 
-        return uf.component
+#         return uf.component
             
