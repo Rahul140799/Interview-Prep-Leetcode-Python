@@ -10,9 +10,9 @@ class UnionFind:
             self.size[val2] = 1
     
     def find(self, node):
-        if self.parent[node] != node:
-            self.parent[node] = self.find(self.parent[self.parent[node]])
-        return self.parent[node]
+        while self.parent[node] != node:
+            node = self.parent[self.parent[node]]
+        return node
     
     def union(self, x, y):
         px = self.find(x)
