@@ -1,4 +1,5 @@
 from collections import defaultdict
+
 class UnionFind:
     def __init__(self, synonyms):
         self.parent = {}
@@ -24,14 +25,11 @@ class UnionFind:
         
         if self.size[px] >= self.size[py]:
             self.parent[py] = px
-            self.size[px] += self.size[py]
         else:
             self.parent[px] = py
-            self.size[py] += self.size[px]
     
 class Solution:
     def generateSentences(self, synonyms: List[List[str]], text: str) -> List[str]:
-        n = len(synonyms)
         uf = UnionFind(synonyms)
         
         for word1, word2 in synonyms:
