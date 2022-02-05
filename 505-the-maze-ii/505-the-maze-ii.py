@@ -27,7 +27,7 @@ class Solution:
                     res.append(new_distance)
                     continue
                 
-                if ((dx,dy) in visited and visited[(dx,dy)] > new_distance) or ((dx,dy) not in visited):
+                if ((dx,dy) not in visited or visited[(dx,dy)] > new_distance):
                     visited[(dx,dy)] = new_distance
                     queue.append((dx,dy,new_distance))
         # print(res)
