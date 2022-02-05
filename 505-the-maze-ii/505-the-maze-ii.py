@@ -8,7 +8,8 @@ class Solution:
         
         visited = {tuple(start) : 0}
         
-        res = []
+        import sys
+        ans = sys.maxsize
         
         while queue:
             x,y,distance = queue.popleft()
@@ -24,13 +25,13 @@ class Solution:
                     new_distance += 1
                     
                 if dx == destination[0] and dy == destination[1]:
-                    res.append(new_distance)
+                    ans = min(ans, new_distance)
                     continue
                 
                 if ((dx,dy) not in visited or visited[(dx,dy)] > new_distance):
                     visited[(dx,dy)] = new_distance
                     queue.append((dx,dy,new_distance))
-        # print(res)
-        return min(res) if res else -1
+                    
+        return -1 if ans == sys.maxsize else ans
                     
         
