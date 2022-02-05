@@ -16,14 +16,12 @@ class Solution:
                 heapq.heappush(res, i.val)
                 i = i.next
         
-        j = 0
         head = ListNode(None)
         final = head
         
         while res:
             head.next = ListNode(heapq.heappop(res))
             head = head.next
-            j += 1
             
         return final.next
             
