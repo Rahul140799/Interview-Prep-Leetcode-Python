@@ -11,6 +11,9 @@ class Solution:
         import sys
         ans = sys.maxsize
         
+        m = len(maze)
+        n = len(maze[0])
+        
         while queue:
             x,y,distance = queue.popleft()
             
@@ -19,7 +22,7 @@ class Solution:
                 dy = y
                 new_distance = distance
                 
-                while 0 <= dx+i < len(maze) and 0 <= dy+j < len(maze[0]) and maze[dx+i][dy+j] == 0:
+                while 0 <= dx+i < m and 0 <= dy+j < n and not maze[dx+i][dy+j]:
                     dx += i
                     dy += j
                     new_distance += 1
