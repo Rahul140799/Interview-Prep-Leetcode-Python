@@ -14,10 +14,10 @@ class Solution:
             return False
         
         for i in range(1,len(arr)):
-            if arr[i] + arr[i-1] > capacity:
+            arr[i] += arr[i-1]
+            if arr[i] > capacity:
                 return False
-            else:
-                arr[i] += arr[i-1]
+            
         # print(arr)
         return True
     
