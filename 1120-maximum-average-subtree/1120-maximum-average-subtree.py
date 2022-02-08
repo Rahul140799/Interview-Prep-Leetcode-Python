@@ -18,7 +18,7 @@ class Solution:
             right,y = dfs(root.right, distance, curr)
             
             curr = left + right + root.val
-            distance = x+y+1
+            distance = x + y + 1
             
             self.avg = max(self.avg, curr/distance)
             return curr, distance
