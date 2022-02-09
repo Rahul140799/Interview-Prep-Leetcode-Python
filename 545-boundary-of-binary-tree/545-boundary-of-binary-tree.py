@@ -28,12 +28,11 @@ class Solution:
             if not root:
                 return 
             
-            leaves(root.left)
-            
             if(not root.left and not root.right and root not in visited):
                 arr.append(root.val)
                 visited.add(root)
             
+            leaves(root.left)
             leaves(root.right)
         
         leaves(root)
