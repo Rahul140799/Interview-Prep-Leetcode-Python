@@ -21,13 +21,8 @@ class Solution:
         flag = 0
         for i in range(len(board)):
             for j in range(len(board[0])):
-                if board[i][j] == start:
-                    ans = dfs(i,j,0)
-                    if ans:
-                        flag = 1
-            
-        if flag:
-            return True
-        
+                if board[i][j] == start and dfs(i,j,0):
+                    return True
+                
         return False
                 
