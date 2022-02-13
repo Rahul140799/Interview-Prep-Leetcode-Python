@@ -3,21 +3,22 @@ class Solution:
         word_list = set(wordDict)
         d = {}
         
-        def dfs(idx,s):
+        def dfs(idx):
             if idx == len(s):
                 return True
             
-            if (idx,s) in d:
-                return d[(idx,s)]
+            if idx in d:
+                return d[idx]
             
-            d[(idx,s)] = False
+            d[idx] = False
             for i in range(idx,len(s)):
                 new_word = s[idx:i+1]
                 
                 if new_word in word_list:
-                    d[(idx,s)] = d[(idx,s)] or dfs(i+1, s)
-                    if d[(idx,s)]:
-                        return d[(idx,s)]
-            return d[(idx,s)]
+                    d[idx] = d[idx] or dfs(i+1)
+                    if d[idx]:
+                        return d[idx]
+                    
+            return d[idx]
             
-        return dfs(0,s)
+        return dfs(0)
