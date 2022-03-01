@@ -6,8 +6,8 @@
 #         self.right = right
 class Solution:
     def widthOfBinaryTree(self, root: Optional[TreeNode]) -> int:
-        level_old, num_old, max_width = 1, 1, 0
-        queue = deque([[level_old,num_old,root]])
+        num_old, level_old, max_width = 1, 1, 0
+        queue = deque([[num_old,level_old,root]])
 
         while queue:    
             [num, level, node] = queue.popleft()
