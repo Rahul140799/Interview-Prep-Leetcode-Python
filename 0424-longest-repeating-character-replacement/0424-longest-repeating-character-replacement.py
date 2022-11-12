@@ -17,15 +17,13 @@ class Solution:
             
             window_size = j-i+1
             
-            if window_size - maxi <= k:
-                ans = max(ans, window_size)
-            else:
-                while i < j and window_size - maxi > k:
-                    if d[s[i]] > 0:
-                        d[s[i]] -= 1
-                        maxi = max(d.values())
-                    i += 1
-                    window_size = j-i+1
+            if window_size - maxi > k:
+                d[s[i]] -= 1
+                i += 1
+                window_size = j-i+1
+                
+            ans = max(ans, window_size)
+            
             j += 1
         return ans
-            
+    
