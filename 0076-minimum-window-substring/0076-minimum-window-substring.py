@@ -12,7 +12,6 @@ class Solution:
         
         i = 0
         j = 0
-        st = ""
         start = 0
         counter = len(t)
         
@@ -32,7 +31,6 @@ class Solution:
                             mini = window_size
                             start = i
                 i += 1
-                
             j += 1
             
         return "" if mini == sys.maxsize else s[start:start+mini] 
